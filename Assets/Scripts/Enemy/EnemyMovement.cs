@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    public EnemyScriptableObject enemyData;
     private Transform player;
 
     private void Awake()
@@ -12,6 +12,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime);
     }
 }
