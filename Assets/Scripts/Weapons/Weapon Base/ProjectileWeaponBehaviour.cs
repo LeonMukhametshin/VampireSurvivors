@@ -67,21 +67,13 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotation);
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyStats enemy = collision.GetComponent<EnemyStats>();
+            EnemyStats enemy = other.GetComponent<EnemyStats>();
             enemy.TakeDamage(currentDamage);
             ReducePierce();
-        }
-        else if(collision.CompareTag("Prop"))
-        {
-            if(collision.gameObject.TryGetComponent(out BreakableProps breakable))
-            {
-                breakable.TakeDamage(currentDamage);
-                ReducePierce();
-            }        
         }
     }
 
