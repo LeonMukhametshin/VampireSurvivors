@@ -130,10 +130,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+=======
+  - component: {fileID: 3781068561052826243}
+  - component: {fileID: 8447667667198464484}
+  - component: {fileID: 3387078378358637015}
+  - component: {fileID: 7239185523126192251}
+  - component: {fileID: 4916869139390528647}
+  - component: {fileID: 3337240069845451272}
+  - component: {fileID: 6348994131672981702}
+  - component: {fileID: 5613659383439497521}
+  - component: {fileID: 566028499028179258}
+>>>>>>> Stashed changes:Assets/Prefabs/Main/Player.prefab
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -316,6 +328,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
   m_GameObject: {fileID: 1710781639}
   m_BodyType: 0
   m_Simulated: 1
@@ -338,6 +351,18 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!212 &1710781643
 SpriteRenderer:
+=======
+  m_GameObject: {fileID: 5943749139730381604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c83b33195405cf409ee6d65d2fd3cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LastMoveVector: {x: 0, y: 0}
+  characterData: {fileID: 11400000, guid: 418d985e7b943b742a15a7a635d708e5, type: 2}
+--- !u!114 &3337240069845451272
+MonoBehaviour:
+>>>>>>> Stashed changes:Assets/Prefabs/Main/Player.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -424,7 +449,79 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
 --- !u!114 &1710781646
+=======
+--- !u!114 &5613659383439497521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5943749139730381604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbc948f0fe9df04c8559475d2482bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 418d985e7b943b742a15a7a635d708e5, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 0
+  invincibilityDuretion: 0.5
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experianceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experianceCapIncrease: 200
+--- !u!114 &566028499028179258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5943749139730381604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f41f35039c45a4398b879a79885daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8942494787036315259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8131971377273802844}
+  - component: {fileID: 6829566634355893294}
+  m_Layer: 0
+  m_Name: Knife controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8131971377273802844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942494787036315259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3781068561052826243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6829566634355893294
+>>>>>>> Stashed changes:Assets/Prefabs/Main/Player.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
