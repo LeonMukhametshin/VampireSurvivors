@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-
     private Rigidbody2D playerRigidbody2D;
     private Vector2 moveDirection;
 
@@ -12,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Vector2 MoveDirection { get { return moveDirection; } }
 
     [HideInInspector] public Vector2 LastMoveVector;
+
+    public CharacterScriptableObject characterData;
 
     private void Awake()
     {
@@ -55,6 +55,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        playerRigidbody2D.velocity = moveDirection * moveSpeed;
+        playerRigidbody2D.velocity = moveDirection * characterData.MoveSpeed;
     }
 }

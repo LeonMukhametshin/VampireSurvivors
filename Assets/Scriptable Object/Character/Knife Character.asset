@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3082d49433d9cb84db788f544c50f850, type: 3}
-  m_Name: Bat Enemy
+  m_Script: {fileID: 11500000, guid: 69441f7aff6946c41af10b27d10a7b3b, type: 3}
+  m_Name: Knife Character
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  maxHealth: 50
-  damage: 30
+  startingWeapon: {fileID: 0}
+  maxHealth: 100
+  recovery: 0
+  moveSpeed: 5
+  might: 0
+  projectileSpeed: 0

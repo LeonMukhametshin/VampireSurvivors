@@ -3,8 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
+  tags: []
+=======
   tags:
   - Enemy
+  - Prop
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -12,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Terrain
+  - 
   - 
   - 
   - 
@@ -41,13 +46,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Backround
-    uniqueID: 3341425569
-    locked: 0
-  - name: Midground
-    uniqueID: 3121129623
-    locked: 0
-  - name: Foreground
-    uniqueID: 1744724933
     locked: 0
