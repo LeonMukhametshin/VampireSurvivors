@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class GarlicBehaviour : MeleeWeaponBehaviour
 {
@@ -24,6 +25,14 @@ public class GarlicBehaviour : MeleeWeaponBehaviour
             enemy.TakeDamage(currentDamage);
 
             markedEnemies.Add(collision.gameObject);
+        }
+        else if (collision.CompareTag("Prop"))
+        {
+            if(collision.gameObject.TryGetComponent(out BreakableProps breakableProps) && !markedEnemies.Contains(collision.gameObject))
+            {
+                breakableProps.TakeDamage(currentDamage);
+                markedEnemies.Add(collision.gameObject);
+            }
         }
     }
 }
