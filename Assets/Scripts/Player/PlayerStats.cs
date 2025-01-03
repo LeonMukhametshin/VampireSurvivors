@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public CharacterScriptableObject characterData;
+    [HideInInspector] public float currentHealth;
+    [HideInInspector] public float currentRecovery;
+    [HideInInspector] public float currentMoveSpeed;
+    [HideInInspector] public float currentMight;
+    [HideInInspector] public float currentProjectileSpeed;
+    [HideInInspector] public float currentMagnet;
 
-    private float currentHealth;
-    private float currentRecovery;
-    private float currentMoveSpeed;
-    private float currentMight;
-    private float currentProjectileSpeed;
+    private CharacterScriptableObject characterData;
+
+    public List<GameObject> spawnedWeapons;
 
     [Header("Experiance/Level")]
     public int experience = 0;
@@ -35,6 +38,8 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         Initialize();
+
+        SpawnWeapon(characterData.StartingWeapon);
     }
 
     private void Start()
@@ -52,6 +57,8 @@ public class PlayerStats : MonoBehaviour
         {
             isInvincible = false;
         }
+
+        Recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -82,11 +89,15 @@ public class PlayerStats : MonoBehaviour
 
     private void Initialize()
     {
+        characterData = CharacterSelector.GetData();
+        CharacterSelector.instance.DestroySingleton();
+
         currentHealth = characterData.MaxHealth;
         currentMight = characterData.Might;
         currentMoveSpeed = characterData.MoveSpeed;
         currentRecovery = characterData.Recovery;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
     }
 
     public void TakeDamage(float damage)
@@ -120,5 +131,24 @@ public class PlayerStats : MonoBehaviour
                 currentHealth = characterData.MaxHealth;
             }
         }
+    }
+
+    private void Recover()
+    {
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
+            if(currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+    }
+
+    public void SpawnWeapon(GameObject weapon)
+    {
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnedWeapon.transform.SetParent(transform);
+        spawnedWeapons.Add(spawnedWeapon);
     }
 }

@@ -11,10 +11,11 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public Vector2 LastMoveVector;
 
-    public CharacterScriptableObject characterData;
+    private PlayerStats player;
 
     private void Awake()
     {
+        player = GetComponent<PlayerStats>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
         LastMoveVector = new Vector2(1, 0f);
     }
@@ -55,6 +56,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        playerRigidbody2D.velocity = moveDirection * characterData.MoveSpeed;
+        playerRigidbody2D.velocity = moveDirection * player.currentMoveSpeed;
     }
 }
